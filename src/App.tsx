@@ -440,6 +440,14 @@ export default function App() {
           })}
         </div>
       </div>
+
+      {/* footer */}
+      <div style={{ borderTop: "1px solid #1a1a2e", padding: "1.5rem 1rem", textAlign: "center", fontSize: "0.6rem", color: "#444" }}>
+        <div>© 2026 Bilakshan Purohit · CC BY-NC-SA 4.0</div>
+        <a href="https://github.com/BilakshanP/alpha-compare" target="_blank" rel="noopener noreferrer" style={{ color: "#555", textDecoration: "none", marginTop: 4, display: "inline-block" }}>
+          GitHub
+        </a>
+      </div>
     </div>
   );
 }
