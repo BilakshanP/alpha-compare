@@ -151,15 +151,16 @@ function computeScores(selectedIds: string[]) {
 
 // ─── Components ──────────────────────────────────────────────────────────────
 function CamHeader({ cam }: { cam: CameraIndex }) {
+  const src = CAMERA_DATA[cam.id]?.src;
   return (
-    <div style={{ textAlign: "center", padding: "0.4rem 0.25rem" }}>
+    <a href={src} target="_blank" rel="noopener noreferrer" style={{ textAlign: "center", padding: "0.4rem 0.25rem", textDecoration: "none", cursor: "pointer" }}>
       <div style={{ fontSize: "0.85rem", fontWeight: 700, color: cam.color, letterSpacing: "0.04em" }}>
         {cam.label}
       </div>
       <div style={{ fontSize: "0.55rem", color: "#666", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: 1 }}>
         {cam.model}
       </div>
-    </div>
+    </a>
   );
 }
 

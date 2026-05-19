@@ -27,6 +27,7 @@ export interface Section {
 
 export interface CameraData {
   id: string;
+  src: string;
   price: PriceMap;
   sections: Section[];
   pros: string[];
