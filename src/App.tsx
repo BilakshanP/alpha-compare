@@ -16,12 +16,11 @@ const SPECS_META = specsMeta as SpecsMetaMap;
 const NOTES = sharedNotes as NotesMap;
 const CURRENCIES = currenciesData as CurrenciesMap;
 const PPP = pppData as PppMap;
-const CAMERA_DATA: Record<string, CameraData> = {
-  a7v: a7vData as CameraData,
-  a7rvi: a7rviData as CameraData,
-  a1ii: a1iiData as CameraData,
-  a9iii: a9iiiData as CameraData,
-};
+
+const cameraModules = import.meta.glob("./data/cameras/*.json", { eager: true }) as Record<string, { default: CameraData }>;
+const CAMERA_DATA: Record<string, CameraData> = Object.fromEntries(
+  Object.values(cameraModules).map(m => [m.default.id, m.default])
+);
 
 // ─── Colour tokens ───────────────────────────────────────────────────────────
 const C = { bg: "#080810", surface: "#0f0f18", border: "#1c1c2e", text: "#ededf4" };
