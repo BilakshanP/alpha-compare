@@ -1,5 +1,9 @@
 {
   "id": "a7rvi",
+  "price": {
+    "USD": null,
+    "INR": null
+  },
   "sections": [
     {
       "id": "sensor",
@@ -123,8 +127,7 @@
         { "label": "Body only weight (g)", "value": 622, "unit": "g", "display": null },
         { "label": "Dimensions W×H×D (mm)", "value": null, "unit": "mm", "display": "132.7×96.9×82.9" },
         { "label": "C5 custom button (front)", "value": null, "unit": null, "display": "—" },
-        { "label": "Charger in box", "value": null, "unit": null, "display": "★ BC-SAD1\n(dual-slot, fast)" },
-        { "label": "India price", "value": null, "unit": "₹", "display": "Coming soon" }
+        { "label": "Charger in box", "value": null, "unit": null, "display": "★ BC-SAD1\n(dual-slot, fast)" }
       ]
     }
   ],

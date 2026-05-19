@@ -27,6 +27,7 @@ export interface Section {
 
 export interface CameraData {
   id: string;
+  price: PriceMap;
   sections: Section[];
   pros: string[];
   cons: string[];
@@ -40,3 +41,12 @@ export interface SpecMeta {
 
 export type SpecsMetaMap = Record<string, SpecMeta>;
 export type NotesMap = Record<string, string>;
+
+export interface CurrencyConfig {
+  symbol: string;
+  label: string;
+}
+
+export type CurrenciesMap = Record<string, CurrencyConfig>;
+export type PppMap = Record<string, number>;
+export type PriceMap = Record<string, number | null>;

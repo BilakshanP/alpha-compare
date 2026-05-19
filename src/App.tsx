@@ -1,9 +1,11 @@
-import { useState } from "react";
-import type { CameraIndex, CameraData, Spec, SpecsMetaMap, NotesMap, Rule } from "./types";
+import { useState, useEffect } from "react";
+import type { CameraIndex, CameraData, Spec, SpecsMetaMap, NotesMap, Rule, CurrenciesMap, PppMap } from "./types";
 
 import cameraIndex from "./data/cameras.json";
 import specsMeta from "./data/specs-meta.json";
 import sharedNotes from "./data/notes.json";
+import currenciesData from "./data/currencies.json";
+import pppData from "./data/ppp.json";
 import a7vData from "./data/cameras/a7v.json";
 import a7rviData from "./data/cameras/a7rvi.json";
 import a1iiData from "./data/cameras/a1ii.json";
@@ -12,6 +14,8 @@ import a9iiiData from "./data/cameras/a9iii.json";
 const CAMERAS = cameraIndex as CameraIndex[];
 const SPECS_META = specsMeta as SpecsMetaMap;
 const NOTES = sharedNotes as NotesMap;
+const CURRENCIES = currenciesData as CurrenciesMap;
+const PPP = pppData as PppMap;
 const CAMERA_DATA: Record<string, CameraData> = {
   a7v: a7vData as CameraData,
   a7rvi: a7rviData as CameraData,
@@ -21,6 +25,41 @@ const CAMERA_DATA: Record<string, CameraData> = {
 
 // ─── Colour tokens ───────────────────────────────────────────────────────────
 const C = { bg: "#080810", surface: "#0f0f18", border: "#1c1c2e", text: "#e4e4f0" };
+
+// ─── Currency helpers ────────────────────────────────────────────────────────
+function formatPrice(amount: number, currency: string): string {
+  const cfg = CURRENCIES[currency];
+  const symbol = cfg?.symbol || currency + " ";
+  const formatted = amount.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+  return `${symbol}${formatted}`;
+}
+
+function useLiveRate(currency: string) {
+  const [rate, setRate] = useState<number | null>(null);
+  useEffect(() => {
+    if (currency === "USD") { setRate(1); return; }
+    setRate(null);
+    fetch(`https://api.frankfurter.dev/v1/latest?base=USD&symbols=${currency}`)
+      .then(r => r.json())
+      .then(d => { if (d.rates?.[currency]) setRate(d.rates[currency]); })
+      .catch(() => {});
+  }, [currency]);
+  return rate;
+}
+
+function getPrice(camId: string, currency: string, liveRate: number | null, usePpp: boolean): { fixed: number | null; converted: number | null; ppp: number | null } {
+  const data = CAMERA_DATA[camId];
+  if (!data) return { fixed: null, converted: null, ppp: null };
+
+  const usd = data.price["USD"];
+  const fixed = data.price[currency] ?? null;
+
+  const converted = (usd != null && liveRate != null) ? Math.round(usd * liveRate) : null;
+  const ppp = (usd != null && PPP[currency]) ? Math.round(usd * PPP[currency]) : null;
+
+  if (usePpp) return { fixed: null, converted: null, ppp };
+  return { fixed, converted: fixed != null ? converted : converted, ppp: null };
+}
 
 // ─── Winner computation ──────────────────────────────────────────────────────
 function computeWinners(label: string, specs: Map<string, Spec>): string[] {
@@ -223,6 +262,9 @@ function Tab({ label, active, onClick }: { label: string; active: boolean; onCli
 export default function App() {
   const [selectedIds, setSelectedIds] = useState<string[]>(CAMERAS.map(c => c.id));
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [currency, setCurrency] = useState("INR");
+  const [usePpp, setUsePpp] = useState(false);
+  const liveRate = useLiveRate(currency);
 
   const sections = joinSections(selectedIds);
   const visible = activeSection ? sections.filter(s => s.id === activeSection) : sections;
@@ -239,7 +281,7 @@ export default function App() {
       {/* header */}
       <div style={{ padding: "2rem 1.25rem 1.25rem", borderBottom: "1px solid #1a1a2e" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ fontSize: "0.6rem", letterSpacing: "0.25em", color: "#444", textTransform: "uppercase", marginBottom: "0.4rem" }}>
+          <div style={{ fontSize: "0.6rem", letterSpacing: "0.25em", color: "#444", textTransform: "uppercase", marginBottom: "1rem" }}>
             Sony Alpha Full-Frame E-Mount · Specifications Comparison
           </div>
 
@@ -266,6 +308,7 @@ export default function App() {
           </div>
 
           <ScoreBar selectedIds={selectedIds} />
+
           <div style={{ marginTop: "0.75rem", fontSize: "0.65rem", color: "#444", fontStyle: "italic" }}>
             ★ = exclusive feature · † = third-party tested · ▶ rows are expandable
           </div>
@@ -290,6 +333,69 @@ export default function App() {
           {selectedIds.map(id => {
             const cam = CAMERAS.find(c => c.id === id)!;
             return <CamHeader key={id} cam={cam} />;
+          })}
+        </div>
+
+        {/* price row */}
+        <div style={{ display: "grid", gridTemplateColumns: cols, padding: "0.5rem 0.6rem", gap: "0.4rem", alignItems: "center", borderBottom: "1px solid #161628", background: "#0c0c16" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
+            <select value={currency} onChange={e => setCurrency(e.target.value)} style={{
+              background: "#111", border: "1px solid #333", color: "#ccc", padding: "0.25rem 0.4rem",
+              borderRadius: 3, fontSize: "0.65rem", cursor: "pointer",
+            }}>
+              {Object.entries(CURRENCIES).filter(([k]) => k !== "USD").map(([code, cfg]) => (
+                <option key={code} value={code}>{cfg.symbol} {cfg.label}</option>
+              ))}
+            </select>
+            <label style={{ display: "flex", alignItems: "center", gap: 3, fontSize: "0.6rem", color: "#555", cursor: "pointer" }}>
+              <input type="checkbox" checked={usePpp} onChange={e => setUsePpp(e.target.checked)} style={{ accentColor: "#f9a825", width: 10, height: 10 }} />
+              PPP (affordability)
+            </label>
+          </div>
+          {selectedIds.map(id => {
+            const cam = CAMERAS.find(c => c.id === id)!;
+            const usdPrice = CAMERA_DATA[id]?.price["USD"];
+            const { fixed, converted, ppp } = getPrice(id, currency, liveRate, usePpp);
+            return (
+              <div key={id} style={{ fontSize: "0.72rem", lineHeight: 1.5 }}>
+                <div style={{ color: cam.color, fontWeight: 600 }}>
+                  {usdPrice != null ? formatPrice(usdPrice, "USD") : "TBA"}
+                </div>
+                {ppp != null ? (
+                  <div style={{ color: "#888" }}>
+                    {formatPrice(ppp, currency)}
+                    <span style={{ fontSize: "0.55rem", color: "#555", marginLeft: 4 }}>PPP equiv.</span>
+                  </div>
+                ) : (
+                  <>
+                    {fixed != null && (
+                      <div style={{ color: "#888" }}>
+                        {formatPrice(fixed, currency)}
+                        <span style={{ fontSize: "0.55rem", color: "#555", marginLeft: 4 }}>fixed</span>
+                      </div>
+                    )}
+                    {converted != null && (
+                      <div style={{ color: "#666" }}>
+                        {formatPrice(converted, currency)}
+                        <span style={{ fontSize: "0.55rem", color: "#555", marginLeft: 4 }}>live</span>
+                      </div>
+                    )}
+                    {fixed != null && converted != null && (() => {
+                      const diff = fixed - converted;
+                      const pct = ((diff / converted) * 100).toFixed(1);
+                      const sign = diff > 0 ? "+" : "";
+                      const color = diff > 0 ? "#ef5350" : "#66bb6a";
+                      return (
+                        <div style={{ fontSize: "0.55rem", color, marginTop: 1 }}>
+                          {sign}{pct}% ({sign}{formatPrice(Math.abs(diff), currency)})
+                        </div>
+                      );
+                    })()}
+                    {fixed == null && converted == null && <div style={{ color: "#555" }}>TBA</div>}
+                  </>
+                )}
+              </div>
+            );
           })}
         </div>
 

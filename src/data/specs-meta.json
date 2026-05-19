@@ -57,6 +57,5 @@
   "Body only weight (g)": { "rule": "lower" },
   "Dimensions W×H×D (mm)": { "rule": "lower" },
   "C5 custom button (front)": { "rule": "manual" },
-  "Charger in box": { "rule": "manual" },
-  "India price": { "rule": "lower" }
+  "Charger in box": { "rule": "manual" }
 }

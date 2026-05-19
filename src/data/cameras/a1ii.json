@@ -1,5 +1,9 @@
 {
   "id": "a1ii",
+  "price": {
+    "USD": 6498,
+    "INR": 599990
+  },
   "sections": [
     {
       "id": "sensor",
@@ -123,8 +127,7 @@
         { "label": "Body only weight (g)", "value": 658, "unit": "g", "display": null },
         { "label": "Dimensions W×H×D (mm)", "value": null, "unit": "mm", "display": "136.1×96.9×82.9" },
         { "label": "C5 custom button (front)", "value": null, "unit": null, "display": "★ Yes" },
-        { "label": "Charger in box", "value": null, "unit": null, "display": "★ BC-ZD1\n(dual, 155 min)" },
-        { "label": "India price", "value": 599990, "unit": "₹", "display": "₹5,99,990" }
+        { "label": "Charger in box", "value": null, "unit": null, "display": "★ BC-ZD1\n(dual, 155 min)" }
       ]
     }
   ],

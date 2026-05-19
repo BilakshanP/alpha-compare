@@ -1,5 +1,9 @@
 {
   "id": "a9iii",
+  "price": {
+    "USD": 5998,
+    "INR": 449990
+  },
   "sections": [
     {
       "id": "sensor",
@@ -123,8 +127,7 @@
         { "label": "Body only weight (g)", "value": 617, "unit": "g", "display": null },
         { "label": "Dimensions W×H×D (mm)", "value": null, "unit": "mm", "display": "136.1×96.9×82.9" },
         { "label": "C5 custom button (front)", "value": null, "unit": null, "display": "★ Yes" },
-        { "label": "Charger in box", "value": null, "unit": null, "display": "BC-QZ1 included" },
-        { "label": "India price", "value": 449990, "unit": "₹", "display": "~₹4,49,990 †" }
+        { "label": "Charger in box", "value": null, "unit": null, "display": "BC-QZ1 included" }
       ]
     }
   ],

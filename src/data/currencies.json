@@ -1,0 +1,12 @@
+{
+  "USD": { "symbol": "$", "label": "US Dollar" },
+  "INR": { "symbol": "₹", "label": "Indian Rupee" },
+  "EUR": { "symbol": "€", "label": "Euro" },
+  "GBP": { "symbol": "£", "label": "British Pound" },
+  "JPY": { "symbol": "¥", "label": "Japanese Yen" },
+  "AUD": { "symbol": "A$", "label": "Australian Dollar" },
+  "CAD": { "symbol": "C$", "label": "Canadian Dollar" },
+  "CHF": { "symbol": "CHF", "label": "Swiss Franc" },
+  "CNY": { "symbol": "¥", "label": "Chinese Yuan" },
+  "SGD": { "symbol": "S$", "label": "Singapore Dollar" }
+}

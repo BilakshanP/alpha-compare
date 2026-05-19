@@ -1,5 +1,9 @@
 {
   "id": "a7v",
+  "price": {
+    "USD": 2798,
+    "INR": 270990
+  },
   "sections": [
     {
       "id": "sensor",
@@ -123,8 +127,7 @@
         { "label": "Body only weight (g)", "value": 610, "unit": "g", "display": null },
         { "label": "Dimensions W×H×D (mm)", "value": null, "unit": "mm", "display": "130.3×96.4×82.4" },
         { "label": "C5 custom button (front)", "value": null, "unit": null, "display": "—" },
-        { "label": "Charger in box", "value": null, "unit": null, "display": "—\n(USB-C charge only)" },
-        { "label": "India price", "value": 270990, "unit": "₹", "display": "₹2,70,990" }
+        { "label": "Charger in box", "value": null, "unit": null, "display": "—\n(USB-C charge only)" }
       ]
     }
   ],
