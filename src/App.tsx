@@ -168,12 +168,14 @@ function ScoreBar({ selectedIds }: { selectedIds: string[] }) {
   const scores = computeScores(selectedIds);
   return (
     <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", alignItems: "center" }}>
+      <span style={{ fontSize: "0.6rem", color: "#555", letterSpacing: "0.05em", cursor: "help" }} title="Number of spec rows where this camera has the best value among selected cameras">SCORE</span>
       {selectedIds.map(id => {
         const cam = CAMERAS.find(c => c.id === id)!;
         return (
-          <div key={id} style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <div key={id} style={{ display: "flex", alignItems: "center", gap: 4 }}>
             <div style={{ width: 8, height: 8, borderRadius: "50%", background: cam.color }} />
             <span style={{ fontSize: "0.72rem", color: "#888" }}>{cam.label}</span>
+            <span style={{ fontSize: "0.72rem", color: "#555" }}>—</span>
             <span style={{ fontSize: "1rem", fontWeight: 700, color: cam.color }}>{scores[id]}</span>
           </div>
         );
