@@ -442,11 +442,14 @@ export default function App() {
       </div>
 
       {/* footer */}
-      <div style={{ borderTop: "1px solid #1a1a2e", padding: "1.5rem 1rem", textAlign: "center", fontSize: "0.6rem", color: "#444" }}>
+      <div style={{ borderTop: "1px solid #1a1a2e", padding: "1.5rem 1rem", textAlign: "center", fontSize: "0.6rem", color: "#444", lineHeight: 1.8 }}>
+        <div>Data sourced from <a href="https://www.sony.co.in" target="_blank" rel="noopener noreferrer" style={{ color: "#555" }}>Sony India</a>, <a href="https://www.cined.com" target="_blank" rel="noopener noreferrer" style={{ color: "#555" }}>CineD</a>, and <a href="https://petapixel.com" target="_blank" rel="noopener noreferrer" style={{ color: "#555" }}>PetaPixel</a></div>
         <div>© 2026 Bilakshan Purohit · CC BY-NC-SA 4.0</div>
-        <a href="https://github.com/BilakshanP/alpha-compare" target="_blank" rel="noopener noreferrer" style={{ color: "#555", textDecoration: "none", marginTop: 4, display: "inline-block" }}>
-          GitHub
-        </a>
+        <div style={{ marginTop: 4 }}>
+          <a href="https://github.com/BilakshanP/alpha-compare" target="_blank" rel="noopener noreferrer" style={{ color: "#555", textDecoration: "none" }}>GitHub</a>
+          <span style={{ margin: "0 6px" }}>·</span>
+          <span>Content issue? Please <a href="https://github.com/BilakshanP/alpha-compare/pulls" target="_blank" rel="noopener noreferrer" style={{ color: "#555" }}>raise a pull request</a></span>
+        </div>
       </div>
     </div>
   );

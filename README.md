@@ -34,7 +34,16 @@ bun run dev
 
 ## Data sources
 
-- https://www.sony.co.in/electronics/interchangeable-lens-cameras/ilce-7m5/specifications
-- https://www.sony.co.in/electronics/interchangeable-lens-cameras/ilce-7rm6/specifications
-- https://www.sony.co.in/electronics/interchangeable-lens-cameras/ilce-1m2/specifications
-- https://www.sony.co.in/interchangeable-lens-cameras/products/ilce-9m3/spec?sku=ilce-9m3-in5
+Spec data sourced from:
+- [Sony India](https://www.sony.co.in/electronics/interchangeable-lens-cameras/ilce-7m5/specifications) — α7 V
+- [Sony India](https://www.sony.co.in/electronics/interchangeable-lens-cameras/ilce-7rm6/specifications) — α7R VI
+- [Sony India](https://www.sony.co.in/electronics/interchangeable-lens-cameras/ilce-1m2/specifications) — α1 II
+- [Sony India](https://www.sony.co.in/interchangeable-lens-cameras/products/ilce-9m3/spec?sku=ilce-9m3-in5) — α9 III
+
+Third-party readout/DR measurements from [CineD](https://www.cined.com) and [PetaPixel](https://petapixel.com).
+
+## License
+
+CC BY-NC-SA 4.0 © 2026 Bilakshan Purohit
+
+If you wish to get any content removed, please [raise a pull request](https://github.com/BilakshanP/alpha-compare/pulls).
