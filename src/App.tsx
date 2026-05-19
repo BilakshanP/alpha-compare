@@ -1,5 +1,20 @@
 import { useState } from "react";
 
+type CamKey = "a7v" | "a7rvi" | "a1ii" | "a9iii";
+
+interface SpecRowData {
+  label: string;
+  note?: string;
+  vals: Record<CamKey, string>;
+  winner: string[];
+}
+
+interface Section {
+  id: string;
+  label: string;
+  rows: SpecRowData[];
+}
+
 // ─── Colour tokens ───────────────────────────────────────────────────────────
 const C = {
   bg:      "#080810",
@@ -12,7 +27,7 @@ const C = {
   a1ii:  { col: "#a5d6a7", label: "α1 II"  },
   a9iii: { col: "#ffcc80", label: "α9 III" },
 };
-const CAMS = ["a7v", "a7rvi", "a1ii", "a9iii"];
+const CAMS: CamKey[] = ["a7v", "a7rvi", "a1ii", "a9iii"];
 const CAM_LABELS = { a7v:"α7 V", a7rvi:"α7R VI", a1ii:"α1 II", a9iii:"α9 III" };
 const CAM_COLOR  = { a7v:C.a7v.col, a7rvi:C.a7rvi.col, a1ii:C.a1ii.col, a9iii:C.a9iii.col };
 const CAM_SUB    = { a7v:"ILCE-7M5", a7rvi:"ILCE-7RM6", a1ii:"ILCE-1M2", a9iii:"ILCE-9M3" };
@@ -20,7 +35,7 @@ const CAM_PRICE  = { a7v:"₹2,70,990", a7rvi:"Coming soon", a1ii:"₹5,99,990",
 
 // note codes:  "★" = exclusive to this camera  "†" = third-party sourced
 // winner: array of cam keys, or "all" | "tie"
-const SECTIONS = [
+const SECTIONS: Section[] = [
   {
     id:"sensor", label:"Sensor & Resolution",
     rows:[
@@ -457,14 +472,14 @@ const SECTIONS = [
 ];
 
 // ── helpers ──────────────────────────────────────────────────────────────────
-function isWinner(camKey, winners) {
+function isWinner(camKey: string, winners: string[]) {
   if (!winners || winners.length === 0) return false;
   if (winners[0] === "tie" || winners[0] === "all") return true;
   return winners.includes(camKey);
 }
 
 // ── components ───────────────────────────────────────────────────────────────
-function CamHeader({ id }) {
+function CamHeader({ id }: { id: CamKey }) {
   return (
     <div style={{ textAlign:"center", padding:"0.4rem 0.25rem" }}>
       <div style={{ fontSize:"0.85rem", fontWeight:700, color:CAM_COLOR[id], letterSpacing:"0.04em" }}>
@@ -497,7 +512,7 @@ function ScoreBar() {
   );
 }
 
-function SpecRow({ row, even }) {
+function SpecRow({ row, even }: { row: SpecRowData; even: boolean }) {
   const [open, setOpen] = useState(false);
   const hasNote = !!row.note;
   return (
@@ -554,7 +569,7 @@ function SpecRow({ row, even }) {
 }
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const visible = activeSection ? SECTIONS.filter(s=>s.id===activeSection) : SECTIONS;
 
   return (
@@ -625,12 +640,12 @@ export default function App() {
 
         {/* verdict */}
         <div style={{ margin:"2rem 0 0", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))", gap:"1rem" }}>
-          {[
-            { cam:"a7v",   points:["Best ISO range — low-light stills king","Lightest body, most affordable","Best battery life per charge","1/16,000s e-shutter (partially stacked advantage)","Familiar NP-FZ100 battery ecosystem"] },
-            { cam:"a7rvi", points:["66.8 MP — highest resolution in lineup","Best 4K readout: ~7ms (DG off)","8K 30p video with 32-bit float audio","EVF with DCI-P3 and illuminated buttons","Dual Gain video, both slots CFexpress A"] },
-            { cam:"a1ii",  points:["<4ms readout — near-global-shutter quality","120 AF/AE calcs/sec — fastest tracking","1/400s flash sync; 1/32,000s e-shutter","240fps EVF; 2.5Gbps wired LAN","IPTC metadata, voice memo, C5 button"] },
-            { cam:"a9iii", points:["★ Zero rolling shutter — global shutter","1/80,000s e-shutter; 1/500s flash sync","120fps blackout-free burst","Purest motion capture — no skew ever","Only camera where e-shutter = mech. shutter quality"] },
-          ].map(({cam,points})=>(
+          {([
+            { cam:"a7v" as CamKey,   points:["Best ISO range — low-light stills king","Lightest body, most affordable","Best battery life per charge","1/16,000s e-shutter (partially stacked advantage)","Familiar NP-FZ100 battery ecosystem"] },
+            { cam:"a7rvi" as CamKey, points:["66.8 MP — highest resolution in lineup","Best 4K readout: ~7ms (DG off)","8K 30p video with 32-bit float audio","EVF with DCI-P3 and illuminated buttons","Dual Gain video, both slots CFexpress A"] },
+            { cam:"a1ii" as CamKey,  points:["<4ms readout — near-global-shutter quality","120 AF/AE calcs/sec — fastest tracking","1/400s flash sync; 1/32,000s e-shutter","240fps EVF; 2.5Gbps wired LAN","IPTC metadata, voice memo, C5 button"] },
+            { cam:"a9iii" as CamKey, points:["★ Zero rolling shutter — global shutter","1/80,000s e-shutter; 1/500s flash sync","120fps blackout-free burst","Purest motion capture — no skew ever","Only camera where e-shutter = mech. shutter quality"] },
+          ]).map(({cam,points})=>(
             <div key={cam} style={{ padding:"1rem", background:"#0d0d18", border:`1px solid ${CAM_COLOR[cam]}30`, borderTop:`2px solid ${CAM_COLOR[cam]}` }}>
               <div style={{ fontSize:"0.65rem", color:CAM_COLOR[cam], fontWeight:700, letterSpacing:"0.1em", marginBottom:"0.75rem" }}>
                 CHOOSE {CAM_LABELS[cam]} IF…
@@ -648,7 +663,7 @@ export default function App() {
   );
 }
 
-function Tab({ label, active, onClick }) {
+function Tab({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
   return (
     <button onClick={onClick} style={{
       background:"none", border:"none",
