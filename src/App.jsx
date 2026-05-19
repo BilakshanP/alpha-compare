@@ -583,8 +583,8 @@ export default function App() {
       </div>
 
       {/* section filter */}
-      <div style={{ borderBottom:"1px solid #1a1a2e", overflowX:"auto" }}>
-        <div style={{ maxWidth:1100, margin:"0 auto", display:"flex", padding:"0 1rem" }}>
+      <div style={{ borderBottom:"1px solid #1a1a2e" }}>
+        <div style={{ maxWidth:1100, margin:"0 auto", display:"flex", flexWrap:"wrap", padding:"0 1rem", gap:"0.25rem" }}>
           <Tab label="All" active={!activeSection} onClick={()=>setActiveSection(null)} />
           {SECTIONS.map(s=>(
             <Tab key={s.id} label={s.label.replace(/^⚡ /,"")} active={activeSection===s.id} onClick={()=>setActiveSection(activeSection===s.id?null:s.id)} />
