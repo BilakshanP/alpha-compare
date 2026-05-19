@@ -1,0 +1,50 @@
+[
+  {
+    "id": "a7v",
+    "brand": "Sony",
+    "label": "α7 V",
+    "model": "ILCE-7M5",
+    "mount": "E",
+    "year": 2025,
+    "priceINR": 270990,
+    "priceDisplay": "₹2,70,990",
+    "color": "#4fc3f7",
+    "tags": ["all-rounder", "low-light", "lightweight"]
+  },
+  {
+    "id": "a7rvi",
+    "brand": "Sony",
+    "label": "α7R VI",
+    "model": "ILCE-7RM6",
+    "mount": "E",
+    "year": 2025,
+    "priceINR": null,
+    "priceDisplay": "Coming soon",
+    "color": "#f48fb1",
+    "tags": ["high-res", "video", "landscape"]
+  },
+  {
+    "id": "a1ii",
+    "brand": "Sony",
+    "label": "α1 II",
+    "model": "ILCE-1M2",
+    "mount": "E",
+    "year": 2024,
+    "priceINR": 599990,
+    "priceDisplay": "₹5,99,990",
+    "color": "#a5d6a7",
+    "tags": ["sports", "pro", "speed"]
+  },
+  {
+    "id": "a9iii",
+    "brand": "Sony",
+    "label": "α9 III",
+    "model": "ILCE-9M3",
+    "mount": "E",
+    "year": 2024,
+    "priceINR": 449990,
+    "priceDisplay": "~₹4,49,990 †",
+    "color": "#ffcc80",
+    "tags": ["sports", "global-shutter", "speed"]
+  }
+]

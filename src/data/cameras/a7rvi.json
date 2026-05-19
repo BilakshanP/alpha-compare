@@ -1,0 +1,145 @@
+{
+  "id": "a7rvi",
+  "sections": [
+    {
+      "id": "sensor",
+      "label": "Sensor & Resolution",
+      "specs": [
+        { "label": "Sensor architecture", "value": null, "unit": null, "display": "Fully stacked\nExmor RS CMOS" },
+        { "label": "Effective pixels (still)", "value": 66.8, "unit": "MP", "display": null },
+        { "label": "Effective pixels (movie)", "value": 55.8, "unit": "MP", "display": null },
+        { "label": "Sensor size", "value": null, "unit": "mm", "display": "35.9×24.0 mm" },
+        { "label": "Optical low-pass filter", "value": null, "unit": null, "display": "Not listed" },
+        { "label": "RAW format", "value": 6.0, "unit": null, "display": "ARW 6.0" },
+        { "label": "Dynamic range (max)", "value": 16, "unit": "stops", "display": "~16 stops" }
+      ]
+    },
+    {
+      "id": "readout",
+      "label": "Readout Speed & Rolling Shutter",
+      "specs": [
+        { "label": "Stills readout (approx.) †", "value": 18, "unit": "ms", "display": "~18 ms\n(fully stacked, high-res penalty)" },
+        { "label": "4K video readout (approx.) †", "value": 7, "unit": "ms", "display": "~7–8 ms (DG off)\n~15.6 ms (Dual Gain on)", "note": "DG-OFF ≈7ms; DG-ON ≈15.6ms" },
+        { "label": "8K video readout (approx.) †", "value": 17, "unit": "ms", "display": "~17 ms\n(vs ~100ms on a7R V — massive improvement)" },
+        { "label": "Max electronic shutter speed", "value": 8000, "unit": "1/s", "display": "1/8,000 s" },
+        { "label": "Does 30fps mean same readout?", "value": null, "unit": null, "display": "30fps e-shutter\nbut ~18ms readout" },
+        { "label": "Blackout-free burst", "value": 30, "unit": "fps", "display": "Yes — 30fps" },
+        { "label": "AF/AE calculations / sec", "value": 60, "unit": "/sec", "display": "60 / sec" }
+      ]
+    },
+    {
+      "id": "iso",
+      "label": "ISO & Low-Light",
+      "specs": [
+        { "label": "Native ISO range (still)", "value": 32000, "unit": "ISO", "display": "100–32,000" },
+        { "label": "Expanded ISO (still)", "value": 102400, "unit": "ISO", "display": "50–102,400" },
+        { "label": "Native ISO range (movie)", "value": 32000, "unit": "ISO", "display": "100–32,000" }
+      ]
+    },
+    {
+      "id": "af",
+      "label": "Autofocus",
+      "specs": [
+        { "label": "AF system", "value": null, "unit": null, "display": "Fast Hybrid AF\n(phase+contrast)" },
+        { "label": "Phase-detect points (still / movie)", "value": 759, "unit": "points", "display": "759 / 759" },
+        { "label": "AF sensitivity range", "value": -6, "unit": "EV", "display": "EV–6 to EV20 (F1.2)\nEV–11 (Bright Monitoring)" },
+        { "label": "Metering sensitivity", "value": -5, "unit": "EV", "display": "EV–5 to EV20" },
+        { "label": "AF tracking response modes", "value": null, "unit": null, "display": "Standard" },
+        { "label": "Selectable release time lag", "value": null, "unit": null, "display": "—" }
+      ]
+    },
+    {
+      "id": "drive",
+      "label": "Drive & Burst",
+      "specs": [
+        { "label": "Max continuous speed (e-shutter)", "value": 30, "unit": "fps", "display": null },
+        { "label": "Max continuous speed (mech.)", "value": 10, "unit": "fps", "display": null },
+        { "label": "Buffer — JPEG Fine L", "value": 215, "unit": "shots", "display": null },
+        { "label": "Buffer — RAW compressed", "value": 65, "unit": "shots", "display": null },
+        { "label": "Flash sync speed", "value": 250, "unit": "1/s", "display": "1/250s (FF)\n1/320s (APS-C)" },
+        { "label": "Pixel Shift Multi Shooting", "value": null, "unit": null, "display": "★ Yes (4 / 16 shots)" }
+      ]
+    },
+    {
+      "id": "ibis",
+      "label": "Image Stabilisation",
+      "specs": [
+        { "label": "IBIS centre (stops)", "value": 8.5, "unit": "stops", "display": null },
+        { "label": "IBIS periphery (stops)", "value": 7.0, "unit": "stops", "display": null }
+      ]
+    },
+    {
+      "id": "video",
+      "label": "Video Recording",
+      "specs": [
+        { "label": "Max video resolution", "value": null, "unit": null, "display": "★ 8K 30p / 4K 120p" },
+        { "label": "RAW video output (HDMI)", "value": null, "unit": null, "display": "Yes (16-bit)" },
+        { "label": "Max audio quality", "value": null, "unit": null, "display": "★ 96kHz 32-bit float\n(with XLR-A4 adaptor)" },
+        { "label": "Network streaming", "value": null, "unit": null, "display": "★ Yes (RTMP/RTMPS/SRT)\nUp to 4K 30p" },
+        { "label": "Dual Gain mode", "value": null, "unit": null, "display": "★ Yes" }
+      ]
+    },
+    {
+      "id": "evf",
+      "label": "Viewfinder & Display",
+      "specs": [
+        { "label": "EVF type & size", "value": null, "unit": null, "display": "0.64\" Quad-XGA OLED\nDCI-P3, 10-bit" },
+        { "label": "EVF resolution", "value": 9437184, "unit": "dots", "display": "9,437,184 dots" },
+        { "label": "EVF magnification", "value": 0.90, "unit": "×", "display": "0.90×" },
+        { "label": "Max EVF frame rate", "value": 120, "unit": "fps", "display": null },
+        { "label": "LCD resolution / type", "value": null, "unit": null, "display": "2,095,104 dots TFT\n4-axis tilt, DCI-P3" },
+        { "label": "Illuminated rear buttons", "value": null, "unit": null, "display": "★ Yes" }
+      ]
+    },
+    {
+      "id": "connectivity",
+      "label": "Connectivity & Storage",
+      "specs": [
+        { "label": "Card slots (CFexpress A support)", "value": null, "unit": null, "display": "★ Both slots" },
+        { "label": "Wired LAN", "value": null, "unit": null, "display": "Via USB-C adapter only" },
+        { "label": "Wi-Fi standard", "value": 6, "unit": null, "display": "Wi-Fi 6 (802.11ax)\n2.4/5/6 GHz" },
+        { "label": "Bluetooth", "value": 5.3, "unit": null, "display": "BT 5.3" },
+        { "label": "Sync terminal", "value": null, "unit": null, "display": "★ Yes" },
+        { "label": "Multi/Micro USB port", "value": null, "unit": null, "display": "—" },
+        { "label": "Voice memo microphone", "value": null, "unit": null, "display": "—" },
+        { "label": "IPTC metadata embedding", "value": null, "unit": null, "display": "—" }
+      ]
+    },
+    {
+      "id": "power",
+      "label": "Power & Battery",
+      "specs": [
+        { "label": "Battery model", "value": null, "unit": null, "display": "NP-SA100 (new)", "note": "New higher-capacity 2670mAh battery" },
+        { "label": "Battery life — stills (EVF / LCD)", "value": 600, "unit": "shots", "display": "600 / 710" },
+        { "label": "Battery life — movie actual rec.", "value": 135, "unit": "min", "display": "135 min" },
+        { "label": "Power draw — stills (EVF)", "value": 4.2, "unit": "W", "display": "~4.2 W" }
+      ]
+    },
+    {
+      "id": "body",
+      "label": "Body & Build",
+      "specs": [
+        { "label": "Weight incl. battery (g)", "value": 713, "unit": "g", "display": null },
+        { "label": "Body only weight (g)", "value": 622, "unit": "g", "display": null },
+        { "label": "Dimensions W×H×D (mm)", "value": null, "unit": "mm", "display": "132.7×96.9×82.9" },
+        { "label": "C5 custom button (front)", "value": null, "unit": null, "display": "—" },
+        { "label": "Charger in box", "value": null, "unit": null, "display": "★ BC-SAD1\n(dual-slot, fast)" },
+        { "label": "India price", "value": null, "unit": "₹", "display": "Coming soon" }
+      ]
+    }
+  ],
+  "pros": [
+    "66.8 MP — highest resolution in any full-frame mirrorless",
+    "8K 30p video with 96kHz 32-bit float audio",
+    "Best EVF: 9.4M dots, DCI-P3, illuminated buttons",
+    "Dual Gain video mode for extended dynamic range",
+    "Both slots CFexpress A, network streaming built-in"
+  ],
+  "cons": [
+    "~18ms stills readout — worst rolling shutter in lineup",
+    "No 240fps EVF option",
+    "Price not yet announced (likely premium)",
+    "Heavier power draw at ~4.2W",
+    "AF sensitivity EV–6 requires F1.2 lens"
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "id": "a1ii",
+  "sections": [
+    {
+      "id": "sensor",
+      "label": "Sensor & Resolution",
+      "specs": [
+        { "label": "Sensor architecture", "value": null, "unit": null, "display": "Fully stacked\nExmor RS CMOS" },
+        { "label": "Effective pixels (still)", "value": 50.1, "unit": "MP", "display": null },
+        { "label": "Effective pixels (movie)", "value": 42.0, "unit": "MP", "display": null },
+        { "label": "Sensor size", "value": null, "unit": "mm", "display": "35.9×24.0 mm" },
+        { "label": "Optical low-pass filter", "value": null, "unit": null, "display": "Not listed" },
+        { "label": "RAW format", "value": 5.0, "unit": null, "display": "ARW 5.0" },
+        { "label": "Dynamic range (max)", "value": 15, "unit": "stops", "display": "~15 stops" }
+      ]
+    },
+    {
+      "id": "readout",
+      "label": "Readout Speed & Rolling Shutter",
+      "specs": [
+        { "label": "Stills readout (approx.) †", "value": 4, "unit": "ms", "display": "<4 ms\n(fully stacked, high speed)" },
+        { "label": "4K video readout (approx.) †", "value": 4, "unit": "ms", "display": "<4 ms" },
+        { "label": "8K video readout (approx.) †", "value": 4, "unit": "ms", "display": "<4 ms" },
+        { "label": "Max electronic shutter speed", "value": 32000, "unit": "1/s", "display": "1/32,000 s" },
+        { "label": "Does 30fps mean same readout?", "value": null, "unit": null, "display": "30fps e-shutter\n<4ms readout" },
+        { "label": "Blackout-free burst", "value": 30, "unit": "fps", "display": "Yes — 30fps" },
+        { "label": "AF/AE calculations / sec", "value": 120, "unit": "/sec", "display": "★ 120 / sec" }
+      ]
+    },
+    {
+      "id": "iso",
+      "label": "ISO & Low-Light",
+      "specs": [
+        { "label": "Native ISO range (still)", "value": 32000, "unit": "ISO", "display": "100–32,000" },
+        { "label": "Expanded ISO (still)", "value": 102400, "unit": "ISO", "display": "50–102,400" },
+        { "label": "Native ISO range (movie)", "value": 32000, "unit": "ISO", "display": "100–32,000" }
+      ]
+    },
+    {
+      "id": "af",
+      "label": "Autofocus",
+      "specs": [
+        { "label": "AF system", "value": null, "unit": null, "display": "Fast Hybrid AF\n(phase+contrast)" },
+        { "label": "Phase-detect points (still / movie)", "value": 759, "unit": "points", "display": "759 / 759" },
+        { "label": "AF sensitivity range", "value": -4, "unit": "EV", "display": "EV–4 to EV20\n(F2.0 lens)" },
+        { "label": "Metering sensitivity", "value": -3, "unit": "EV", "display": "EV–3 to EV20" },
+        { "label": "AF tracking response modes", "value": null, "unit": null, "display": "★ Stable / Standard / Responsive" },
+        { "label": "Selectable release time lag", "value": null, "unit": null, "display": "★ Yes (Fastest/Stable/Auto)" }
+      ]
+    },
+    {
+      "id": "drive",
+      "label": "Drive & Burst",
+      "specs": [
+        { "label": "Max continuous speed (e-shutter)", "value": 30, "unit": "fps", "display": null },
+        { "label": "Max continuous speed (mech.)", "value": 10, "unit": "fps", "display": null },
+        { "label": "Buffer — JPEG Fine L", "value": 400, "unit": "shots", "display": "400 (@ 20fps)\n190 (30fps, extra fine)" },
+        { "label": "Buffer — RAW compressed", "value": 240, "unit": "shots", "display": "153 (compressed)\n240 (compressed, 30fps)" },
+        { "label": "Flash sync speed", "value": 400, "unit": "1/s", "display": "★ 1/400s (FF)\n1/500s (APS-C)" },
+        { "label": "Pixel Shift Multi Shooting", "value": null, "unit": null, "display": "★ Yes (4 / 16 shots)" }
+      ]
+    },
+    {
+      "id": "ibis",
+      "label": "Image Stabilisation",
+      "specs": [
+        { "label": "IBIS centre (stops)", "value": 8.5, "unit": "stops", "display": null },
+        { "label": "IBIS periphery (stops)", "value": 7.0, "unit": "stops", "display": null }
+      ]
+    },
+    {
+      "id": "video",
+      "label": "Video Recording",
+      "specs": [
+        { "label": "Max video resolution", "value": null, "unit": null, "display": "★ 8K 30p / 4K 120p" },
+        { "label": "RAW video output (HDMI)", "value": null, "unit": null, "display": "Yes (16-bit)" },
+        { "label": "Max audio quality", "value": null, "unit": null, "display": "48kHz 24-bit LPCM" },
+        { "label": "Network streaming", "value": null, "unit": null, "display": "★ Yes (RTMP/RTMPS/SRT)\nUp to 4K 30p" },
+        { "label": "Dual Gain mode", "value": null, "unit": null, "display": "—" }
+      ]
+    },
+    {
+      "id": "evf",
+      "label": "Viewfinder & Display",
+      "specs": [
+        { "label": "EVF type & size", "value": null, "unit": null, "display": "0.64\" Quad-XGA OLED" },
+        { "label": "EVF resolution", "value": 9437184, "unit": "dots", "display": "9,437,184 dots" },
+        { "label": "EVF magnification", "value": 0.90, "unit": "×", "display": "0.90×" },
+        { "label": "Max EVF frame rate", "value": 240, "unit": "fps", "display": "★ 240fps" },
+        { "label": "LCD resolution / type", "value": null, "unit": null, "display": "2,095,104 dots TFT\n4-axis tilt" },
+        { "label": "Illuminated rear buttons", "value": null, "unit": null, "display": "—" }
+      ]
+    },
+    {
+      "id": "connectivity",
+      "label": "Connectivity & Storage",
+      "specs": [
+        { "label": "Card slots (CFexpress A support)", "value": null, "unit": null, "display": "★ Both slots" },
+        { "label": "Wired LAN", "value": null, "unit": null, "display": "★ Built-in 2.5GBASE-T\n(2.5 Gbps native)" },
+        { "label": "Wi-Fi standard", "value": 5, "unit": null, "display": "Wi-Fi 5 (802.11ac)\n2.4/5 GHz only" },
+        { "label": "Bluetooth", "value": 5.0, "unit": null, "display": "BT 5.0" },
+        { "label": "Sync terminal", "value": null, "unit": null, "display": "★ Yes" },
+        { "label": "Multi/Micro USB port", "value": null, "unit": null, "display": "★ Yes (legacy)" },
+        { "label": "Voice memo microphone", "value": null, "unit": null, "display": "★ Yes" },
+        { "label": "IPTC metadata embedding", "value": null, "unit": null, "display": "★ Yes (up to 20 presets)" }
+      ]
+    },
+    {
+      "id": "power",
+      "label": "Power & Battery",
+      "specs": [
+        { "label": "Battery model", "value": null, "unit": null, "display": "NP-FZ100" },
+        { "label": "Battery life — stills (EVF / LCD)", "value": 420, "unit": "shots", "display": "420 / 520" },
+        { "label": "Battery life — movie actual rec.", "value": 85, "unit": "min", "display": "85 min" },
+        { "label": "Power draw — stills (EVF)", "value": 4.7, "unit": "W", "display": "~4.7 W" }
+      ]
+    },
+    {
+      "id": "body",
+      "label": "Body & Build",
+      "specs": [
+        { "label": "Weight incl. battery (g)", "value": 743, "unit": "g", "display": null },
+        { "label": "Body only weight (g)", "value": 658, "unit": "g", "display": null },
+        { "label": "Dimensions W×H×D (mm)", "value": null, "unit": "mm", "display": "136.1×96.9×82.9" },
+        { "label": "C5 custom button (front)", "value": null, "unit": null, "display": "★ Yes" },
+        { "label": "Charger in box", "value": null, "unit": null, "display": "★ BC-ZD1\n(dual, 155 min)" },
+        { "label": "India price", "value": 599990, "unit": "₹", "display": "₹5,99,990" }
+      ]
+    }
+  ],
+  "pros": [
+    "<4ms readout — near-global-shutter quality, minimal rolling shutter",
+    "120 AF/AE calcs/sec — fastest subject tracking in lineup",
+    "1/400s flash sync (FF); 240fps EVF for zero-lag shooting",
+    "Built-in 2.5Gbps wired LAN for pro sports transmission",
+    "IPTC metadata, voice memo, C5 button, pixel shift"
+  ],
+  "cons": [
+    "Most expensive at ₹5,99,990",
+    "Heaviest body at 743g",
+    "Worst battery life — 420 shots EVF, 85 min video",
+    "Wi-Fi 5 only (no 6 GHz band)",
+    "No Dual Gain video mode"
+  ]
+}
