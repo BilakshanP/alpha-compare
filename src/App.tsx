@@ -24,7 +24,7 @@ const CAMERA_DATA: Record<string, CameraData> = {
 };
 
 // ─── Colour tokens ───────────────────────────────────────────────────────────
-const C = { bg: "#080810", surface: "#0f0f18", border: "#1c1c2e", text: "#e4e4f0" };
+const C = { bg: "#080810", surface: "#0f0f18", border: "#1c1c2e", text: "#ededf4" };
 
 // ─── Currency helpers ────────────────────────────────────────────────────────
 function formatPrice(amount: number, currency: string): string {
@@ -223,7 +223,7 @@ function SpecRow({ specLabel, sectionId, selectedIds, even }: { specLabel: strin
           return (
             <div key={camId} style={{
               fontSize: "0.72rem",
-              color: win ? cam.color : "#606075",
+              color: win ? cam.color : "#8080a0",
               fontWeight: win ? 600 : 400,
               lineHeight: 1.4,
               whiteSpace: "pre-line",
@@ -285,7 +285,7 @@ export default function App() {
       {/* header */}
       <div style={{ padding: "2rem 1.25rem 1.25rem", borderBottom: "1px solid #1a1a2e" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ fontSize: "0.6rem", letterSpacing: "0.25em", color: "#444", textTransform: "uppercase", marginBottom: "1rem" }}>
+          <div style={{ fontSize: "0.6rem", letterSpacing: "0.25em", color: "#666", textTransform: "uppercase", marginBottom: "1rem" }}>
             Sony Alpha Full-Frame E-Mount · Specifications Comparison
           </div>
 
@@ -313,7 +313,7 @@ export default function App() {
 
           <ScoreBar selectedIds={selectedIds} />
 
-          <div style={{ marginTop: "0.75rem", fontSize: "0.65rem", color: "#444", fontStyle: "italic" }}>
+          <div style={{ marginTop: "0.75rem", fontSize: "0.65rem", color: "#666", fontStyle: "italic" }}>
             ★ = exclusive feature · † = third-party tested · ▶ rows are expandable
           </div>
         </div>
@@ -360,7 +360,7 @@ export default function App() {
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 1rem 3rem" }}>
         {/* sticky header */}
         <div style={{ display: "grid", gridTemplateColumns: cols, padding: "0 0.6rem", position: "sticky", top: 0, background: C.bg, borderBottom: "1px solid #1a1a2e", zIndex: 10 }}>
-          <div style={{ fontSize: "0.6rem", color: "#444", padding: "0.6rem 0", letterSpacing: "0.12em", textTransform: "uppercase" }}>Specification</div>
+          <div style={{ fontSize: "0.6rem", color: "#666", padding: "0.6rem 0", letterSpacing: "0.12em", textTransform: "uppercase" }}>Specification</div>
           {selectedIds.map(id => {
             const cam = CAMERAS.find(c => c.id === id)!;
             return <CamHeader key={id} cam={cam} />;
