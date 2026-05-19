@@ -460,12 +460,12 @@ export default function App() {
                     <span style={{ color: cam.color, flexShrink: 0 }}>+</span>{p}
                   </div>
                 ))}
-                <div style={{ fontSize: "0.65rem", color: "#666", fontWeight: 700, letterSpacing: "0.1em", margin: "0.75rem 0 0.5rem" }}>
-                  CONS
+                <div style={{ fontSize: "0.65rem", color: `${cam.color}99`, fontWeight: 700, letterSpacing: "0.1em", margin: "0.75rem 0 0.5rem" }}>
+                  {cam.label} — CONS
                 </div>
                 {data.cons.map((c, i) => (
                   <div key={i} style={{ display: "flex", gap: 6, marginBottom: "0.3rem", fontSize: "0.7rem", color: "#555", lineHeight: 1.4 }}>
-                    <span style={{ color: "#666", flexShrink: 0 }}>−</span>{c}
+                    <span style={{ color: `${cam.color}80`, flexShrink: 0 }}>−</span>{c}
                   </div>
                 ))}
               </div>
