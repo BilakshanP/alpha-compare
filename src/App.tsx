@@ -51,8 +51,8 @@ function getPrice(camId: string, currency: string, liveRate: number | null, useP
   const data = CAMERA_DATA[camId];
   if (!data) return { fixed: null, converted: null, ppp: null };
 
-  const usd = data.price["USD"];
-  const fixed = data.price[currency] ?? null;
+  const usd = data.price.current["USD"] ?? null;
+  const fixed = data.price.current[currency] ?? null;
 
   const converted = (usd != null && liveRate != null) ? Math.round(usd * liveRate) : null;
   const ppp = (usd != null && PPP[currency]) ? Math.round(usd * PPP[currency]) : null;
@@ -265,8 +265,9 @@ function Tab({ label, active, onClick }: { label: string; active: boolean; onCli
 export default function App() {
   const [selectedIds, setSelectedIds] = useState<string[]>(CAMERAS.map(c => c.id));
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [currency, setCurrency] = useState("INR");
+  const [currency, setCurrency] = useState("");
   const [usePpp, setUsePpp] = useState(false);
+  const [showPriceHistory, setShowPriceHistory] = useState(false);
   const liveRate = useLiveRate(currency);
 
   const sections = joinSections(selectedIds);
@@ -328,6 +329,33 @@ export default function App() {
         </div>
       </div>
 
+      {/* currency toolbar */}
+      <div style={{ borderBottom: "1px solid #1a1a2e" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: 8, alignItems: "center", padding: "0.5rem 1rem" }}>
+          <select value={currency} onChange={e => setCurrency(e.target.value)} style={{
+            background: "#111", border: "1px solid #333", color: "#ccc", padding: "0.25rem 0.4rem",
+            borderRadius: 3, fontSize: "0.65rem", cursor: "pointer",
+          }}>
+            <option value="">USD only</option>
+            {Object.entries(CURRENCIES).filter(([k]) => k !== "USD").map(([code, cfg]) => (
+              <option key={code} value={code}>{cfg.symbol} {cfg.label}</option>
+            ))}
+          </select>
+          <button onClick={() => setUsePpp(p => !p)} style={{
+            background: usePpp ? "#f9a82520" : "transparent",
+            border: `1px solid ${usePpp ? "#f9a825" : "#333"}`,
+            color: usePpp ? "#f9a825" : "#555",
+            padding: "0.2rem 0.5rem", borderRadius: 3, fontSize: "0.6rem", cursor: "pointer",
+          }}>PPP</button>
+          <button onClick={() => setShowPriceHistory(p => !p)} style={{
+            background: showPriceHistory ? "#f9a82520" : "transparent",
+            border: `1px solid ${showPriceHistory ? "#f9a825" : "#333"}`,
+            color: showPriceHistory ? "#f9a825" : "#555",
+            padding: "0.2rem 0.5rem", borderRadius: 3, fontSize: "0.6rem", cursor: "pointer",
+          }}>History</button>
+        </div>
+      </div>
+
       {/* table */}
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 1rem 3rem" }}>
         {/* sticky header */}
@@ -340,31 +368,18 @@ export default function App() {
         </div>
 
         {/* price row */}
-        <div style={{ display: "grid", gridTemplateColumns: cols, padding: "0.5rem 0.6rem", gap: "0.4rem", alignItems: "center", borderBottom: "1px solid #161628", background: "#0c0c16" }}>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
-            <select value={currency} onChange={e => setCurrency(e.target.value)} style={{
-              background: "#111", border: "1px solid #333", color: "#ccc", padding: "0.25rem 0.4rem",
-              borderRadius: 3, fontSize: "0.65rem", cursor: "pointer",
-            }}>
-              {Object.entries(CURRENCIES).filter(([k]) => k !== "USD").map(([code, cfg]) => (
-                <option key={code} value={code}>{cfg.symbol} {cfg.label}</option>
-              ))}
-            </select>
-            <label style={{ display: "flex", alignItems: "center", gap: 3, fontSize: "0.6rem", color: "#555", cursor: "pointer" }}>
-              <input type="checkbox" checked={usePpp} onChange={e => setUsePpp(e.target.checked)} style={{ accentColor: "#f9a825", width: 10, height: 10 }} />
-              PPP (affordability)
-            </label>
-          </div>
+        <div style={{ display: "grid", gridTemplateColumns: cols, padding: "0.5rem 0.6rem", gap: "0.4rem", alignItems: "start", borderBottom: "1px solid #161628", background: "#0c0c16" }}>
+          <div style={{ fontSize: "0.7rem", color: "#555" }}>Price</div>
           {selectedIds.map(id => {
             const cam = CAMERAS.find(c => c.id === id)!;
-            const usdPrice = CAMERA_DATA[id]?.price["USD"];
+            const usdPrice = CAMERA_DATA[id]?.price.current["USD"];
             const { fixed, converted, ppp } = getPrice(id, currency, liveRate, usePpp);
             return (
               <div key={id} style={{ fontSize: "0.72rem", lineHeight: 1.5 }}>
                 <div style={{ color: cam.color, fontWeight: 600 }}>
                   {usdPrice != null ? formatPrice(usdPrice, "USD") : "TBA"}
                 </div>
-                {ppp != null ? (
+                {currency && (ppp != null ? (
                   <div style={{ color: "#888" }}>
                     {formatPrice(ppp, currency)}
                     <span style={{ fontSize: "0.55rem", color: "#555", marginLeft: 4 }}>PPP equiv.</span>
@@ -396,7 +411,24 @@ export default function App() {
                     })()}
                     {fixed == null && converted == null && <div style={{ color: "#555" }}>TBA</div>}
                   </>
-                )}
+                ))}
+                {showPriceHistory && (() => {
+                  const p = CAMERA_DATA[id]?.price;
+                  if (!p) return null;
+                  const cur = currency || "USD";
+                  const launch = p.launch?.[cur] ?? p.launch?.["USD"];
+                  const min = p.min?.[cur] ?? p.min?.["USD"];
+                  const max = p.max?.[cur] ?? p.max?.["USD"];
+                  const showCur = p.launch?.[cur] != null || p.min?.[cur] != null || p.max?.[cur] != null ? cur : "USD";
+                  if (!launch && !min && !max) return null;
+                  return (
+                    <div style={{ fontSize: "0.55rem", color: "#555", marginTop: 2, lineHeight: 1.6 }}>
+                      {launch != null && <div>Launch: {formatPrice(launch, showCur)}</div>}
+                      {min != null && <div>Min: {formatPrice(min, showCur)}</div>}
+                      {max != null && <div>Max: {formatPrice(max, showCur)}</div>}
+                    </div>
+                  );
+                })()}
               </div>
             );
           })}

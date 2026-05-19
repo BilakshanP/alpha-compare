@@ -6,8 +6,6 @@
     "model": "ILCE-7M5",
     "mount": "E",
     "year": 2025,
-    "priceINR": 270990,
-    "priceDisplay": "₹2,70,990",
     "color": "#4fc3f7",
     "tags": ["all-rounder", "low-light", "lightweight"]
   },
@@ -18,8 +16,6 @@
     "model": "ILCE-7RM6",
     "mount": "E",
     "year": 2025,
-    "priceINR": null,
-    "priceDisplay": "Coming soon",
     "color": "#f48fb1",
     "tags": ["high-res", "video", "landscape"]
   },
@@ -30,8 +26,6 @@
     "model": "ILCE-1M2",
     "mount": "E",
     "year": 2024,
-    "priceINR": 599990,
-    "priceDisplay": "₹5,99,990",
     "color": "#a5d6a7",
     "tags": ["sports", "pro", "speed"]
   },
@@ -42,8 +36,6 @@
     "model": "ILCE-9M3",
     "mount": "E",
     "year": 2024,
-    "priceINR": 449990,
-    "priceDisplay": "~₹4,49,990 †",
     "color": "#ffcc80",
     "tags": ["sports", "global-shutter", "speed"]
   }

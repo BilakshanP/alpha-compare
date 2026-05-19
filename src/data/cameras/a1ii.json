@@ -2,8 +2,10 @@
   "id": "a1ii",
   "src": "https://www.sony.co.in/electronics/interchangeable-lens-cameras/ilce-1m2/specifications",
   "price": {
-    "USD": 6498,
-    "INR": 599990
+    "current": { "USD": 6498, "EUR": 6549, "GBP": 4749, "AUD": 9999, "CAD": 8499, "INR": 599990 },
+    "launch": { "USD": 6500 },
+    "min": { "USD": 6498 },
+    "max": { "USD": 6500 }
   },
   "sections": [
     {
@@ -133,17 +135,17 @@
     }
   ],
   "pros": [
-    "<4ms readout — near-global-shutter quality, minimal rolling shutter",
-    "120 AF/AE calcs/sec — fastest subject tracking in lineup",
-    "1/400s flash sync (FF); 240fps EVF for zero-lag shooting",
-    "Built-in 2.5Gbps wired LAN for pro sports transmission",
-    "IPTC metadata, voice memo, C5 button, pixel shift"
+    "<4ms sensor readout — near-zero rolling shutter",
+    "120 AF/AE calculations per second for reliable subject tracking",
+    "1/400s flash sync (FF), 240fps EVF for lag-free shooting",
+    "Built-in 2.5Gbps wired LAN for fast file transmission",
+    "IPTC metadata embedding, voice memo, pixel shift multi-shot"
   ],
   "cons": [
-    "Most expensive at ₹5,99,990",
-    "Heaviest body at 743g",
-    "Worst battery life — 420 shots EVF, 85 min video",
+    "743g body weight — heavier than most full-frame mirrorless",
+    "420 shots per charge (EVF), 85 min video — limited endurance",
     "Wi-Fi 5 only (no 6 GHz band)",
-    "No Dual Gain video mode"
+    "No Dual Gain video mode",
+    "~4.7W power draw under normal use"
   ]
 }

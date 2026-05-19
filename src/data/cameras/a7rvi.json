@@ -2,8 +2,10 @@
   "id": "a7rvi",
   "src": "https://www.sony.co.in/electronics/interchangeable-lens-cameras/ilce-7rm6/specifications",
   "price": {
-    "USD": null,
-    "INR": null
+    "current": { "USD": 4500, "GBP": 4500, "AUD": 6999, "CAD": 6000 },
+    "launch": { "USD": 4500 },
+    "min": { "USD": 4500 },
+    "max": { "USD": 4500 }
   },
   "sections": [
     {
@@ -133,17 +135,17 @@
     }
   ],
   "pros": [
-    "66.8 MP — highest resolution in any full-frame mirrorless",
-    "8K 30p video with 96kHz 32-bit float audio",
-    "Best EVF: 9.4M dots, DCI-P3, illuminated buttons",
+    "66.8 MP resolution — exceptional detail for landscapes and studio",
+    "8K 30p video with 96kHz 32-bit float audio recording",
+    "9.4M dot EVF with DCI-P3 color and illuminated buttons",
     "Dual Gain video mode for extended dynamic range",
-    "Both slots CFexpress A, network streaming built-in"
+    "Both card slots support CFexpress A, built-in network streaming"
   ],
   "cons": [
-    "~18ms stills readout — worst rolling shutter in lineup",
+    "~18ms stills readout — rolling shutter visible on fast motion",
     "No 240fps EVF option",
-    "Price not yet announced (likely premium)",
-    "Heavier power draw at ~4.2W",
-    "AF sensitivity EV–6 requires F1.2 lens"
+    "High power draw at ~4.2W reduces shooting time",
+    "EV–6 AF sensitivity requires an F1.2 lens",
+    "New NP-SA100 battery — not compatible with existing NP-FZ100 chargers"
   ]
 }

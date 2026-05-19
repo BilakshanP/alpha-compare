@@ -5,8 +5,6 @@ export interface CameraIndex {
   model: string;
   mount: string;
   year: number;
-  priceINR: number | null;
-  priceDisplay: string;
   color: string;
   tags: string[];
 }
@@ -28,7 +26,7 @@ export interface Section {
 export interface CameraData {
   id: string;
   src: string;
-  price: PriceMap;
+  price: PriceData;
   sections: Section[];
   pros: string[];
   cons: string[];
@@ -51,3 +49,10 @@ export interface CurrencyConfig {
 export type CurrenciesMap = Record<string, CurrencyConfig>;
 export type PppMap = Record<string, number>;
 export type PriceMap = Record<string, number | null>;
+
+export interface PriceData {
+  current: Record<string, number>;
+  launch: Record<string, number>;
+  min: Record<string, number>;
+  max: Record<string, number>;
+}

@@ -2,8 +2,10 @@
   "id": "a9iii",
   "src": "https://www.sony.co.in/interchangeable-lens-cameras/products/ilce-9m3/spec?sku=ilce-9m3-in5",
   "price": {
-    "USD": 5998,
-    "INR": 449990
+    "current": { "USD": 5998, "EUR": 5775, "GBP": 5299, "AUD": 8999, "JPY": 785142, "INR": 449990 },
+    "launch": { "USD": 5998 },
+    "min": { "USD": 5998 },
+    "max": { "USD": 5998 }
   },
   "sections": [
     {
@@ -133,17 +135,17 @@
     }
   ],
   "pros": [
-    "★ Zero rolling shutter — only global shutter full-frame camera",
-    "1/80,000s e-shutter with flash sync at any speed",
-    "120fps blackout-free burst — unmatched for action",
-    "Purest motion capture — no skew, no banding, ever",
-    "240fps EVF, voice memo, C5 button"
+    "Global shutter — zero rolling shutter at any shutter speed",
+    "1/80,000s electronic shutter with flash sync at any speed",
+    "120fps blackout-free continuous shooting",
+    "No banding under artificial lighting — clean e-shutter always",
+    "240fps EVF, voice memo, dedicated C5 button"
   ],
   "cons": [
-    "Lowest resolution at 24.6 MP",
-    "Worst dynamic range (~14.3 stops) — global shutter trade-off",
-    "Highest base ISO (250) — less low-light headroom",
-    "No 8K video, no network streaming",
-    "Highest power draw at ~4.8W, short battery life"
+    "24.6 MP resolution — less cropping headroom",
+    "~14.3 stops dynamic range — global shutter trade-off",
+    "Base ISO starts at 250 — less low-light flexibility",
+    "No 8K video, no built-in network streaming",
+    "~4.8W power draw, 400 shots per charge (EVF)"
   ]
 }

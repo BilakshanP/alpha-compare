@@ -2,8 +2,10 @@
   "id": "a7v",
   "src": "https://www.sony.co.in/electronics/interchangeable-lens-cameras/ilce-7m5/specifications",
   "price": {
-    "USD": 2798,
-    "INR": 270990
+    "current": { "USD": 2898, "EUR": 2999, "GBP": 2499, "AUD": 4399, "CAD": 3699, "INR": 270990 },
+    "launch": { "USD": 2898 },
+    "min": { "USD": 2898 },
+    "max": { "USD": 2898 }
   },
   "sections": [
     {
@@ -133,17 +135,17 @@
     }
   ],
   "pros": [
-    "Best ISO range — low-light stills king",
-    "Lightest body at 695g, most affordable at ₹2.7L",
-    "Best battery life — 630 shots EVF, 130 min video",
-    "Wi-Fi 6 with 6 GHz band + BT 5.3",
-    "Familiar NP-FZ100 battery ecosystem"
+    "Excellent ISO range up to 204,800 expanded — strong in low light",
+    "Lightweight at 695g with compact body",
+    "630 shots per charge (EVF), 130 min video recording",
+    "Wi-Fi 6 with 6 GHz band and Bluetooth 5.3",
+    "ARW 6.0 RAW with ~16 stops dynamic range"
   ],
   "cons": [
-    "~14ms readout — visible rolling shutter with e-shutter",
+    "~14ms sensor readout — noticeable rolling shutter with e-shutter",
     "No 8K video recording",
     "Only one CFexpress A slot (Slot 2 is SD only)",
-    "Smaller 0.5\" EVF with lower 3.7M dot resolution",
-    "No RAW video output, no network streaming"
+    "Smaller 0.5\" EVF with 3.7M dot resolution",
+    "No RAW video output, no built-in network streaming"
   ]
 }
