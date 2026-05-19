@@ -1,0 +1,151 @@
+{
+  "id": "a7rv",
+  "src": "https://www.sony.co.in/interchangeable-lens-cameras/products/ilce-7rm5/spec?sku=ilce-7rm5-in5",
+  "price": {
+    "current": { "USD": 3498, "GBP": 2999, "AUD": 5799, "CAD": 4799, "INR": 339990 },
+    "launch": { "USD": 3898 },
+    "min": { "USD": 3298 },
+    "max": { "USD": 3898 }
+  },
+  "sections": [
+    {
+      "id": "sensor",
+      "label": "Sensor & Resolution",
+      "specs": [
+        { "label": "Sensor architecture", "value": null, "unit": null, "display": "Back-illuminated\nExmor R CMOS" },
+        { "label": "Effective pixels (still)", "value": 61.0, "unit": "MP", "display": null },
+        { "label": "Effective pixels (movie)", "value": 61.0, "unit": "MP", "display": null },
+        { "label": "Sensor size", "value": null, "unit": "mm", "display": "35.7×23.8 mm" },
+        { "label": "Optical low-pass filter", "value": null, "unit": null, "display": "No" },
+        { "label": "RAW format", "value": 2.3, "unit": null, "display": "ARW 2.3" },
+        { "label": "Dynamic range (max)", "value": 15, "unit": "stops", "display": "~15 stops" }
+      ]
+    },
+    {
+      "id": "readout",
+      "label": "Readout Speed & Rolling Shutter",
+      "specs": [
+        { "label": "Stills readout (approx.) †", "value": 18, "unit": "ms", "display": "~18 ms\n(non-stacked BSI)" },
+        { "label": "4K video readout (approx.) †", "value": 20, "unit": "ms", "display": "~20 ms" },
+        { "label": "8K video readout (approx.) †", "value": 30, "unit": "ms", "display": "~30 ms (8K 25p)" },
+        { "label": "Max electronic shutter speed", "value": 8000, "unit": "1/s", "display": "1/8,000 s" },
+        { "label": "Does 30fps mean same readout?", "value": null, "unit": null, "display": "N/A — no 30fps burst" },
+        { "label": "Blackout-free burst", "value": null, "unit": "fps", "display": "No" },
+        { "label": "AF/AE calculations / sec", "value": 120, "unit": "/sec", "display": "120 / sec" }
+      ]
+    },
+    {
+      "id": "iso",
+      "label": "ISO & Low-Light",
+      "specs": [
+        { "label": "Native ISO range (still)", "value": 32000, "unit": "ISO", "display": "100–32,000" },
+        { "label": "Expanded ISO (still)", "value": 102400, "unit": "ISO", "display": "50–102,400" },
+        { "label": "Native ISO range (movie)", "value": 32000, "unit": "ISO", "display": "100–32,000" }
+      ]
+    },
+    {
+      "id": "af",
+      "label": "Autofocus",
+      "specs": [
+        { "label": "AF system", "value": null, "unit": null, "display": "Fast Hybrid AF\n(phase+contrast)\nAI Processing Unit" },
+        { "label": "Phase-detect points (still / movie)", "value": 693, "unit": "points", "display": "693 / 693" },
+        { "label": "AF sensitivity range", "value": -4, "unit": "EV", "display": "EV–4 to EV20\n(F2.0 lens)" },
+        { "label": "Metering sensitivity", "value": -3, "unit": "EV", "display": "EV–3 to EV20" },
+        { "label": "AF tracking response modes", "value": null, "unit": null, "display": "Standard" },
+        { "label": "Selectable release time lag", "value": null, "unit": null, "display": "—" }
+      ]
+    },
+    {
+      "id": "drive",
+      "label": "Drive & Burst",
+      "specs": [
+        { "label": "Max continuous speed (e-shutter)", "value": 7, "unit": "fps", "display": null },
+        { "label": "Max continuous speed (mech.)", "value": 10, "unit": "fps", "display": null },
+        { "label": "Buffer — JPEG Fine L", "value": 184, "unit": "shots", "display": null },
+        { "label": "Buffer — RAW compressed", "value": 88, "unit": "shots", "display": null },
+        { "label": "Flash sync speed", "value": 250, "unit": "1/s", "display": "1/250s" },
+        { "label": "Pixel Shift Multi Shooting", "value": null, "unit": null, "display": "Yes — 16 shots\n(240MP composite)" }
+      ]
+    },
+    {
+      "id": "ibis",
+      "label": "Image Stabilisation",
+      "specs": [
+        { "label": "IBIS centre (stops)", "value": 8.0, "unit": "stops", "display": null },
+        { "label": "IBIS periphery (stops)", "value": 7.0, "unit": "stops", "display": null }
+      ]
+    },
+    {
+      "id": "video",
+      "label": "Video Recording",
+      "specs": [
+        { "label": "Max video resolution", "value": null, "unit": null, "display": "8K 25p / 4K 60p" },
+        { "label": "RAW video output (HDMI)", "value": null, "unit": null, "display": "16-bit RAW\n(via HDMI)" },
+        { "label": "Max audio quality", "value": null, "unit": null, "display": "48kHz 24-bit LPCM" },
+        { "label": "Network streaming", "value": null, "unit": null, "display": "—" },
+        { "label": "Dual Gain mode", "value": null, "unit": null, "display": "—" }
+      ]
+    },
+    {
+      "id": "evf",
+      "label": "Viewfinder & Display",
+      "specs": [
+        { "label": "EVF type & size", "value": null, "unit": null, "display": "0.64\" Quad-XGA OLED" },
+        { "label": "EVF resolution", "value": 9437184, "unit": "dots", "display": "9,437,184 dots" },
+        { "label": "EVF magnification", "value": 0.90, "unit": "×", "display": "0.90×" },
+        { "label": "Max EVF frame rate", "value": 120, "unit": "fps", "display": null },
+        { "label": "LCD resolution / type", "value": null, "unit": null, "display": "2,095,104 dots TFT\n4-axis tilt" },
+        { "label": "Illuminated rear buttons", "value": null, "unit": null, "display": "—" }
+      ]
+    },
+    {
+      "id": "connectivity",
+      "label": "Connectivity & Storage",
+      "specs": [
+        { "label": "Card slots (CFexpress A support)", "value": null, "unit": null, "display": "Dual slots\n(both CFexpress A / SD)" },
+        { "label": "Wired LAN", "value": null, "unit": null, "display": "Via USB-C adapter only" },
+        { "label": "Wi-Fi standard", "value": 5, "unit": null, "display": "Wi-Fi 5 (802.11ac)\n2.4/5 GHz MIMO" },
+        { "label": "Bluetooth", "value": 5.0, "unit": null, "display": "BT 5.0" },
+        { "label": "Sync terminal", "value": null, "unit": null, "display": "Yes" },
+        { "label": "Multi/Micro USB port", "value": null, "unit": null, "display": "—" },
+        { "label": "Voice memo microphone", "value": null, "unit": null, "display": "—" },
+        { "label": "IPTC metadata embedding", "value": null, "unit": null, "display": "—" }
+      ]
+    },
+    {
+      "id": "power",
+      "label": "Power & Battery",
+      "specs": [
+        { "label": "Battery model", "value": null, "unit": null, "display": "NP-FZ100" },
+        { "label": "Battery life — stills (EVF / LCD)", "value": 530, "unit": "shots", "display": "530 / 600" },
+        { "label": "Battery life — movie actual rec.", "value": 100, "unit": "min", "display": "100 min" },
+        { "label": "Power draw — stills (EVF)", "value": 3.5, "unit": "W", "display": "~3.5 W" }
+      ]
+    },
+    {
+      "id": "body",
+      "label": "Body & Build",
+      "specs": [
+        { "label": "Weight incl. battery (g)", "value": 723, "unit": "g", "display": null },
+        { "label": "Body only weight (g)", "value": 638, "unit": "g", "display": null },
+        { "label": "Dimensions W×H×D (mm)", "value": null, "unit": "mm", "display": "131.3×96.9×82.4" },
+        { "label": "C5 custom button (front)", "value": null, "unit": null, "display": "—" },
+        { "label": "Charger in box", "value": null, "unit": null, "display": "Yes\n(BC-QZ1 included)" }
+      ]
+    }
+  ],
+  "pros": [
+    "Massive 61MP resolution with no optical low-pass filter — exceptional detail",
+    "Industry-leading 0.64\" 9.44M dot EVF with 0.90× magnification",
+    "8-stop IBIS enables handheld shooting at very slow shutter speeds",
+    "AI-driven AF with human pose estimation for superior subject recognition",
+    "8K video recording and Pixel Shift Multi Shooting for 240MP composites"
+  ],
+  "cons": [
+    "~18ms sensor readout — significant rolling shutter with electronic shutter",
+    "Only 10fps mechanical / 7fps electronic — limited for fast action",
+    "Native ISO ceiling of 32,000 — less low-light headroom than lower-res sensors",
+    "No blackout-free shooting or pre-capture buffer",
+    "Large 61MP files demand fast cards and substantial storage"
+  ]
+}

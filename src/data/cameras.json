@@ -38,5 +38,35 @@
     "year": 2024,
     "color": "#ffcc80",
     "tags": ["sports", "global-shutter", "speed"]
+  },
+  {
+    "id": "a7rv",
+    "brand": "Sony",
+    "label": "α7R V",
+    "model": "ILCE-7RM5",
+    "mount": "E",
+    "year": 2022,
+    "color": "#ce93d8",
+    "tags": ["high-res", "landscape", "studio"]
+  },
+  {
+    "id": "a7riv",
+    "brand": "Sony",
+    "label": "α7R IV",
+    "model": "ILCE-7RM4",
+    "mount": "E",
+    "year": 2019,
+    "color": "#90caf9",
+    "tags": ["high-res", "landscape"]
+  },
+  {
+    "id": "a7iv",
+    "brand": "Sony",
+    "label": "α7 IV",
+    "model": "ILCE-7M4",
+    "mount": "E",
+    "year": 2021,
+    "color": "#80cbc4",
+    "tags": ["all-rounder", "hybrid", "video"]
   }
 ]
